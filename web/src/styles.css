@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #252821;
+  background: #f5f4ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --ink: #252821;
+  --muted: #898a80;
+  --green: #53745d;
+  --line: #e9e7df;
+  --paper: #fffefa;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 340px;
+  min-height: 100vh;
+}
+button,
+input {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+.app-shell {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+.topbar {
+  height: 77px;
+  border-bottom: 1px solid #e6e4dd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+.brand span {
+  color: var(--green);
+}
+.top-note {
+  font-size: 12px;
+  color: var(--muted);
+}
+.hero {
+  padding: 72px 0 48px;
+}
+.eyebrow,
+.section-kicker {
+  font:
+    500 10px "DM Mono",
+    monospace;
+  letter-spacing: 1.35px;
+  color: var(--green);
+}
+.hero h1 {
+  font-size: clamp(43px, 7vw, 70px);
+  line-height: 0.99;
+  letter-spacing: -3px;
+  margin: 18px 0 16px;
+  font-weight: 600;
+}
+.hero h1 em {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  color: var(--green);
+}
+.hero > p,
+.muted {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.setup {
+  padding: 28px 32px;
+  max-width: 620px;
+}
+.setup h2,
+.form-panel h2,
+.bills-heading h2 {
+  font-size: 22px;
+  letter-spacing: -0.7px;
+  margin: 9px 0 8px;
+}
+.setup .muted {
+  margin-bottom: 20px;
+}
+.inline-form {
+  display: flex;
+  gap: 9px;
+}
+.inline-form input {
+  flex: 1;
+}
+.app-shell input {
+  height: 43px;
+  border: 1px solid #e3e1d8;
+  background: white;
+  border-radius: 5px;
+  padding: 0 13px;
+  min-width: 0;
+  color: var(--ink);
+  outline: none;
+  font-size: 13px;
+}
+.app-shell input:focus {
+  border-color: #8ca18e;
+  box-shadow: 0 0 0 3px #53745d16;
+}
+.app-shell input::placeholder {
+  color: #aaa99f;
+}
+.app-shell button:not(.text-button):not(.pay-button) {
+  border: 0;
+  border-radius: 5px;
+  background: var(--green);
+  color: white;
+  padding: 0 16px;
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.app-shell button:disabled {
+  opacity: 0.52;
+  cursor: wait;
+}
+.app-shell button span {
+  margin-left: 11px;
+}
+.home-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 35px 0 18px;
+  padding: 0 2px;
+}
+.home-strip strong {
+  display: block;
+  font:
+    13px "DM Mono",
+    monospace;
+  margin-top: 6px;
+}
+.text-button {
+  background: transparent;
+  border: 0;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px;
+}
+.forms-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 14px;
+}
+.form-panel {
+  padding: 23px 24px;
+}
+.form-panel h2 {
+  margin-bottom: 18px;
+}
+.form-panel form {
+  display: grid;
+  gap: 9px;
+}
+.money-input {
+  position: relative;
+}
+.app-shell .money-input > span {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.money-input input {
+  width: 100%;
+  padding-left: 30px;
+}
+.bills-section {
+  margin-top: 47px;
+}
+.bills-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.bills-heading h2 {
+  margin: 8px 0 0;
+}
+.empty,
+.state {
+  padding: 34px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+.empty-icon {
+  margin: 0 auto 10px;
+  width: 34px;
+  height: 34px;
+  background: #edf1eb;
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.empty h3 {
+  color: var(--ink);
+  font-size: 15px;
+  margin: 7px;
+}
+.empty p {
+  margin: 0;
+}
+.bill-list {
+  display: grid;
+  gap: 12px;
+}
+.bill-card {
+  padding: 0 23px;
+}
+.bill-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 0;
+  border-bottom: 1px solid var(--line);
+}
+.bill-title {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.bill-index {
+  font:
+    11px "DM Mono",
+    monospace;
+  color: #9a9c90;
+}
+.bill-title h3 {
+  font-size: 15px;
+  margin: 0 0 3px;
+}
+.bill-title p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+.bill-total {
+  font:
+    500 20px "DM Mono",
+    monospace;
+  letter-spacing: -1px;
+}
+.share-row {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border-bottom: 1px solid #f0eee8;
+}
+.share-row:last-child {
+  border-bottom: 0;
+}
+.avatar {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #edf1eb;
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+.share-name {
+  font-size: 12px;
+  flex: 1;
+}
+.share-amount {
+  font:
+    12px "DM Mono",
+    monospace;
+  color: #51544c;
+}
+.paid-badge {
+  font-size: 10px;
+  color: #53745d;
+  background: #edf3ec;
+  border-radius: 20px;
+  padding: 5px 9px;
+}
+.pay-button {
+  border: 1px solid #d9e2d8;
+  background: white;
+  color: var(--green);
+  border-radius: 4px;
+  padding: 6px 9px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.pay-button:hover {
+  background: #f2f6f1;
+}
+.app-shell .pay-button span {
+  margin-left: 7px;
+}
+.error-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  max-width: min(460px, calc(100vw - 32px));
+  padding: 13px 15px;
+  border: 1px solid #edc9c0;
+  background: #fff9f7;
+  border-radius: 6px;
+  color: #884337;
+  box-shadow: 0 8px 32px #31251d14;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.app-shell .error-toast > span {
+  background: #f4e0da;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 700;
+}
+.app-shell .error-toast button[aria-label] {
+  background: transparent;
+  color: #884337;
+  padding: 4px;
+  margin-left: 5px;
+  font-size: 17px;
+}
+footer {
+  padding: 43px 0 27px;
+  text-align: center;
+  color: #a1a197;
+  font:
+    9px "DM Mono",
+    monospace;
+  letter-spacing: 1px;
+}
+@media (max-width: 650px) {
+  .app-shell {
+    padding: 0 19px;
+  }
+  .topbar {
+    height: 64px;
+  }
+  .hero {
+    padding: 56px 0 34px;
+  }
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+  .forms-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-panel {
+    padding: 20px;
+  }
+  .setup {
+    padding: 23px 20px;
+  }
+  .inline-form {
+    flex-direction: column;
+  }
+  .inline-form button {
+    height: 43px;
+  }
+  .bill-card {
+    padding: 0 14px;
+  }
+  .share-row {
+    gap: 8px;
+  }
+  .share-name {
+    font-size: 11px;
+  }
+  .share-amount {
+    font-size: 11px;
+  }
+  .pay-button {
+    padding: 6px;
+  }
+  .home-strip strong {
+    font-size: 11px;
+  }
+}
